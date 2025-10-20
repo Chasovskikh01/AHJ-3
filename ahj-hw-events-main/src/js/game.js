@@ -14,7 +14,7 @@ export default class Game {
     for (let i = 0; i < 16; i += 1) {
       const cell = document.createElement("div");
       cell.classList.add("cell");
-      this.board.appendChild(cell);
+      this.board.append(cell);
       this.cells.push(cell);
     }
   }
@@ -58,7 +58,7 @@ export default class Game {
     goblin.classList.add("goblin");
     let previousCellIndex = Math.floor(Math.random() * this.cells.length);
     let currentCell = this.cells[previousCellIndex];
-    currentCell.appendChild(goblin);
+    currentCell.append(goblin);
 
     this.intervalId = setInterval(() => {
       goblin.classList.add("hidden");
@@ -71,7 +71,7 @@ export default class Game {
       previousCellIndex = randomCellIndex;
       currentCell = this.cells[randomCellIndex];
 
-      currentCell.appendChild(goblin);
+      currentCell.append(goblin);
       goblin.classList.remove("hidden");
     }, 1000);
   }
